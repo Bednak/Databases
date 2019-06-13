@@ -1,0 +1,180 @@
+Exercises
+
+1. 
+
+> Write out a generic SELECT statement.
+
+SELECT testColumn
+FROM testTable
+WHERE condition=1;
+
+
+2. 
+
+> Create a fun way to remember the order of operations in a SELECT statement, such as a mnemonic.
+
+Select
+Column 
+From
+Table
+Where
+Condition
+
+Some code for the wicked charm
+
+
+3. 
+
+> Given this dogs table, write queries to select the following pieces of data:
+
+Intake teams typically guess the breed of shelter dogs, so the breed column may have multiple words (for example, "Labrador Collie mix").
+
+- Display the name, gender, and age of all dogs that are part Labrador.
+
+SELECT name, gender, age
+FROM dogs
+WHERE breed LIKE '%labrador%'; 
+
+
+- Display the ids of all dogs that are under 1 year old.
+
+SELECT id
+FROM dogs
+WHERE age < 1;
+
+
+- Display the name and age of all dogs that are female and over 35lbs.
+
+SELECT name, age
+FROM dogs
+WHERE gender='F' AND weight > 35;
+
+
+- Display all of the information about all dogs that are not Shepherd mixes.
+
+SELECT *
+FROM dogs
+WHERE breed NOT LIKE '%shepherd%';
+
+
+- Display the id, age, weight, and breed of all dogs that are either over 60lbs or Great Danes.
+
+SELECT id, age, weight, breed
+FROM dogs
+WHERE weight > 60 OR breed='great dane';
+
+
+4.
+
+> Given this cats table, what records are returned from these queries?
+
+- SELECT name, adoption_date FROM cats;
+
+Mushi, 2016-03-22
+Seashell, NULL
+Azul, 2016-04-17
+Victoire, 2016-09-01
+Nala, NULL
+
+
+- SELECT name, age FROM cats;
+
+Mushi, 1
+Seashell, 7
+Azul, 3
+Victoire, 7
+Nala, 1
+
+5. 
+
+> From the cats table, write queries to select the following pieces of data.
+
+- Display all the information about all of the available cats.
+
+SELECT *
+FROM cats;
+
+
+- Display the name and sex of all cats who are 7 years old.
+
+SELECT name, gender
+FROM cats
+WHERE age=7;
+
+
+- Find all of the names of the cats, so you don’t choose duplicate names for new cats.
+
+SELECT name
+FROM cats;
+
+6.
+
+> List each comparison operator and explain when you would use it. Include a real world example for each.
+
+> - Greater than used when you compare two values
+WHERE amount > 99;
+
+< - Less than used when comparing two values.
+WHERE amount < 99;
+
+= - Equal used when comparing two values
+WHERE color='blue';
+
+<= - Less than or equal to used when comparing two values
+WHERE id <= 1000;
+
+>= Greater than or equal to used when comparing two values
+WHERE id >= 2000;
+
+!= Not equal to used when comparing two values
+WHERE color !=orange;
+
+<> = Not equal to
+WHERE age <> 18;
+
+LIKE - pattern matches string
+WHERE artistName LIKE '%The%';
+
+BETWEEN - if expression is within a range 
+WHERE id BETWEEN 1111 AND 9999; 
+
+IS TRUE/ IS FALSE - return value where a boolean equals true or false
+WHERE hasRead IS TRUE;
+WHERE hasRead IS FALSE;
+
+IS NULL - Determines if cell is empty/null
+WHERE price IS NULL;
+
+
+AND - both conditions need to be true for the row to be displayed
+WHERE color='green' AND size='medium';
+
+OR - one condition needs to be true for the row to be displayed 
+WHERE price < 9.99 OR onSale=true;
+
+NOT - row will be returned is value is not condition 
+WHERE name NOT LIKE '%Kam%';
+
+
+
+7.
+
+> From the cats table, what data is returned from these queries?
+
+- SELECT name FROM cats WHERE gender = ‘F’;
+
+Seashell
+Nala
+
+
+- SELECT name FROM cats WHERE age <> 3;
+
+Mushi
+Seashell
+Victoire
+Nala
+
+- SELECT ID FROM cats WHERE name != ‘Mushi’ AND gender = ‘M’;
+
+3
+4
